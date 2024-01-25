@@ -34,9 +34,6 @@
 [submodule "generators/sha3"]
 	path = generators/sha3
 	url = https://github.com/ucb-bar/sha3.git
-[submodule "vlsi/hammer-mentor-plugins"]
-	path = vlsi/hammer-mentor-plugins
-	url = https://github.com/ucb-bar/hammer-mentor-plugins.git
 [submodule "tools/axe"]
 	path = tools/axe
 	url = https://github.com/CTSRD-CHERI/axe.git
@@ -145,3 +142,12 @@
 [submodule "toolchains/riscv-tools/riscv-spike-devices"]
 	path = toolchains/riscv-tools/riscv-spike-devices
 	url = https://github.com/ucb-bar/spike-devices.git
+[submodule "vlsi/hammer-synopsys-plugins"]
+	path = vlsi/hammer-synopsys-plugins
+	url = /home/ff/eecs251b/sp24-workspace/hammer-synopsys-plugins
+[submodule "vlsi/hammer-cadence-plugins"]
+	path = vlsi/hammer-cadence-plugins
+	url = git@github.com:ucb-bar/hammer-cadence-plugins.git
+[submodule "vlsi/hammer-mentor-plugins"]
+	path = vlsi/hammer-mentor-plugins
+	url = /home/ff/eecs251b/sp24-workspace/hammer-mentor-plugins/.git/

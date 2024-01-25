@@ -6,11 +6,8 @@ vlsi.core.max_threads: 12
 
 # Technology paths
 technology.sky130:
-  sky130A: "/path/to/sky130A"
-  sram22_sky130_macros: "/path/to/sram22_sky130_macros"
-
-  # this key is OPTIONAL, no NDA files will be used if it does not point to a valid path
-  sky130_nda: "/path/to/skywater-src-nda"
+  sky130A: "/home/ff/eecs251b/sky130/sky130A"  
+  sram22_sky130_macros: "/home/ff/eecs151/fa23/sky130_srams/sram22_sky130_macros"  
 
 # General Hammer Inputs
 
@@ -20,7 +17,7 @@ vlsi.inputs.power_spec_type: "cpf"
 
 # Specify clock signals
 vlsi.inputs.clocks: [
-  {name: "clock_uncore_clock", period: "20ns", uncertainty: "1ns"}
+  {name: "clock_uncore", period: "20ns", uncertainty: "1ns"}
 ]
 
 # Generate Make include to aid in flow
