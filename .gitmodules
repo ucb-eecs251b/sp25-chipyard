@@ -145,9 +145,9 @@
 [submodule "vlsi/hammer-synopsys-plugins"]
 	path = vlsi/hammer-synopsys-plugins
 	url = /home/ff/eecs251b/sp24-workspace/hammer-synopsys-plugins
-[submodule "vlsi/hammer-cadence-plugins"]
-	path = vlsi/hammer-cadence-plugins
-	url = git@github.com:ucb-bar/hammer-cadence-plugins.git
 [submodule "vlsi/hammer-mentor-plugins"]
 	path = vlsi/hammer-mentor-plugins
 	url = /home/ff/eecs251b/sp24-workspace/hammer-mentor-plugins/.git/
+[submodule "vlsi/hammer"]
+	path = vlsi/hammer
+	url = git@github.com:rohanku/hammer.git

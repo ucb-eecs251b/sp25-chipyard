@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-#
-# NOTE: the custom hooks are only used for sky130.
 
 import os
 
@@ -10,34 +8,7 @@ from typing import Dict, Callable, Optional, List
 
 from hammer.technology.sky130 import SKY130Tech
 
-def example_place_tap_cells(x: HammerTool) -> bool:
-    if x.get_setting("vlsi.core.technology") == "sky130":
-        x.append('''
-# TODO
-# Place custom TCL here
-''')
-    return True
-
-def example_add_fillers(x: HammerTool) -> bool:
-    if x.get_setting("vlsi.core.technology") == "sky130":
-        x.append('''
-# TODO
-# Place custom TCL here
-''')
-    return True
-
-def example_tool_settings(x: HammerTool) -> bool:
-    if x.get_setting("vlsi.core.technology") == "sky130":
-        x.append('''
-# TODO
-# Place custom TCL here
-# only route in met1 to met4 [metal layers: li1(1), met1(2), ..., met4(5), met5(6)]
-set_db route_design_bottom_routing_layer 2
-set_db route_design_top_routing_layer 5
-''')
-    return True
-
-class ExampleDriver(CLIDriver):
+class Eecs251bDriver(CLIDriver):
     def get_extra_par_hooks(self) -> List[HammerToolHookAction]:
         extra_hooks = [
             # Default set of steps can be found in the CAD tool plugin's __init__.py
@@ -60,4 +31,4 @@ class ExampleDriver(CLIDriver):
         return extra_hooks
 
 if __name__ == '__main__':
-    ExampleDriver().main()
+    Eecs251bDriver().main()

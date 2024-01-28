@@ -1,0 +1,95 @@
+# SoC design parameters
+
+# Specify clock signals
+vlsi.inputs.clocks: [
+  {name: "clock_uncore", period: "20ns", uncertainty: "1ns"}
+]
+
+# Placement constraints
+vlsi.inputs.placement_constraints:
+  - path: "ChipTop"
+    type: toplevel
+    x: 0
+    y: 0
+    width: 3588
+    height: 5188
+    margins:
+      left: 249.78
+      right: 249.78
+      top: 252.08
+      bottom: 252.08
+
+    # dcache
+  - path: ChipTop/system/tile_prci_domain/tile_reset_domain_tile/dcache/data/data_arrays_0/data_arrays_0_ext/mem_0_0
+    type: hardmacro
+    x: 300
+    y: 255
+    orientation: my90
+  - path: ChipTop/system/tile_prci_domain/tile_reset_domain_tile/dcache/tag_array_0/tag_array_0_ext/mem_0_0
+    type: hardmacro
+    x: 470
+    y: 800
+    orientation: my90
+
+    # icache
+  - path: ChipTop/system/tile_prci_domain/tile_reset_domain_tile/frontend/icache/data_arrays_0_0/data_arrays_0_0_ext/mem_0_0
+    type: hardmacro
+    x: 2750
+    y: 255
+    orientation: r270
+  - path: ChipTop/system/tile_prci_domain/tile_reset_domain_tile/frontend/icache/data_arrays_1_0/data_arrays_0_0_ext/mem_0_0
+    type: hardmacro
+    x: 2750
+    y: 575
+    orientation: r270
+  - path: ChipTop/system/tile_prci_domain/tile_reset_domain_tile/frontend/icache/tag_array_0/tag_array_0_0_ext/mem_0_0
+    type: hardmacro
+    x: 3020
+    y: 900
+    orientation: r270
+
+    # srambist
+  - path: ChipTop/system/srambist/sram
+    type: hardmacro
+    x: 470
+    y: 1600
+    orientation: my90
+
+# Power straps
+par.power_straps_mode: generate
+par.generate_power_straps_method: by_tracks
+par.blockage_spacing: 2.0
+par.blockage_spacing_top_layer: met3
+par.generate_power_straps_options:
+  by_tracks:
+    strap_layers:
+      - met4
+      - met5
+    pin_layers:
+      - met5
+    blockage_spacing_met2: 4.0
+    blockage_spacing_met4: 2.0
+    track_width: 3
+    track_width_met5: 1
+    track_spacing: 5
+    track_start: 10
+    track_start_met5: 1
+    power_utilization: 0.1
+    power_utilization_met4: 0.1
+    power_utilization_met5: 0.1
+
+
+# Pin placement constraints
+vlsi.inputs.pin_mode: generated
+vlsi.inputs.pin.generate_mode: semi_auto
+vlsi.inputs.pin.assignments: [
+  {pins: "*", layers: ["met2", "met4"], side: "bottom"}
+]
+
+# DRC/LVS modifiers
+drc.inputs:
+  additional_drc_text_mode: "append"
+  additional_drc_text: "exclude_cell sram22_64x32m4w32_macro"
+lvs.inputs:
+  additional_lvs_text_mode: "append"
+  additional_lvs_text: "lvs_black_box sram22_64x32m4w32_macro -gray"

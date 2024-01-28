@@ -35,12 +35,12 @@ else
 endif
 
 ENV_YML            ?= $(vlsi_dir)/env.yml
-TECH_CONF          ?= example-$(tech_name).yml
-TOOLS_CONF         ?= example-tools.yml
-INPUT_CONFS        ?= $(TOOLS_CONF) $(TECH_CONF)
-HAMMER_EXEC        ?= $(if $(filter $(tech_name),sky130),\
-                        ./example-vlsi-sky130,\
-                        ./example-vlsi)
+TECH_CONF          ?= $(tech_name).yml
+TOOLS_CONF         ?= tools.yml
+DESIGN_CONF        ?= design.yml
+INPUT_CONFS        ?= $(TOOLS_CONF) $(TECH_CONF) $(DESIGN_CONF)
+HAMMER_EXEC        ?= ./eecs251b-vlsi
+
 VLSI_TOP           ?= $(TOP)
 VLSI_MODEL_DUT_NAME ?= chiptop0
 # If overriding, this should be relative to $(vlsi_dir)

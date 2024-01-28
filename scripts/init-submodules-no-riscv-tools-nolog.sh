@@ -110,7 +110,7 @@ cd "$RDIR"
             software/spec2017 \
             tools/dsptools \
             tools/rocket-dsp-utils \
-            vlsi/hammer-cadence-plugins \
+            vlsi/hammer \
             vlsi/hammer-mentor-plugins \
             vlsi/hammer-synopsys-plugins
         do
