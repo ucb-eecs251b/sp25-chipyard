@@ -1,0 +1,31 @@
+# Design-specific configuration for Lab 4 
+
+# Synthesis inputs
+synthesis.inputs:
+  input_files: ["lab4/decoder.v"]
+  top_module: "decoder"
+
+# Specify clock signals
+vlsi.inputs.clocks: [
+  {name: "clk", period: "2ns", uncertainty: "0.01ns"}
+]
+
+vlsi.inputs.custom_sdc_constraints: [
+  "set_input_delay -clock clk 0 [all_inputs]",
+  "set_output_delay -clock clk 0 [all_outputs]"
+]
+
+# Placement Constraints
+# For ASAP7, all numbers must be 4x larger than final GDS
+vlsi.inputs.placement_constraints:
+  - path: "decoder"
+    type: toplevel
+    x: 0
+    y: 0
+    width: 30
+    height: 30
+    margins:
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
