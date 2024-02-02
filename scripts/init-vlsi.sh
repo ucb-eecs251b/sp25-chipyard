@@ -12,7 +12,7 @@ fi
 
 # Initialize HAMMER CAD-plugins
 if [[ $1 != *openroad* ]] && [[ $2 != *openroad* ]]; then
-    git submodule update --init --recursive vlsi/hammer
+    git submodule update --init vlsi/hammer
     git submodule update --init --recursive vlsi/hammer-mentor-plugins
     git submodule update --init --recursive vlsi/hammer-synopsys-plugins
     pip install -e vlsi/hammer
