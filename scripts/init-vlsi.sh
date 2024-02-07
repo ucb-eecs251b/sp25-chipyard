@@ -10,19 +10,5 @@ if [[ `basename $CONDA_PREFIX` != .conda-env ]]; then
     exit
 fi
 
-# Initialize HAMMER CAD-plugins
-if [[ $1 != *openroad* ]] && [[ $2 != *openroad* ]]; then
-    git submodule update --init vlsi/hammer
-    git submodule update --init --recursive vlsi/hammer-mentor-plugins
-    git submodule update --init --recursive vlsi/hammer-synopsys-plugins
-    pip install -e vlsi/hammer
-    pip install -e vlsi/hammer-mentor-plugins
-    pip install -e vlsi/hammer-synopsys-plugins
-fi
-
-# Initialize HAMMER tech plugin
-# And add tech plugin to conda dependencies
-if [[ $1 != *asap7* ]] && [[ $1 != *sky130* ]]; then
-    git submodule update --init --recursive vlsi/hammer-$1-plugin
-    pip install -e vlsi/hammer-$1-plugin
-fi
+git submodule update --init vlsi/hammer
+pip install -e vlsi/hammer

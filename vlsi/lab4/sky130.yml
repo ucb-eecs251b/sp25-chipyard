@@ -1,0 +1,16 @@
+# Technology Setup
+# Technology used is Sky130
+vlsi.core.technology: "hammer.technology.sky130"
+
+vlsi.core.max_threads: 12
+
+# Technology paths
+technology.sky130:
+  sky130A: "/home/ff/eecs251b/sky130/sky130A"  
+  sram22_sky130_macros: "/home/ff/eecs251b/sky130/sram22_sky130_macros"  
+  drc_blackbox_srams: true
+  lvs_blackbox_srams: true
+  sky130_cds: "/home/ff/eecs151/fa23/pdk_final/sky130_cds/sky130_prelim_release_091123"
+
+# SRAM compiler options
+vlsi.core.sram_generator_tool: "hammer.technology.sky130.sram_compiler"
