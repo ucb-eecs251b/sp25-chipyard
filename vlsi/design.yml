@@ -93,3 +93,8 @@ drc.inputs:
 lvs.inputs:
   additional_lvs_text_mode: "append"
   additional_lvs_text: "lvs_black_box sram22_64x32m4w32_macro -gray"
+
+# Power settings
+power.inputs:
+  database: "build/chipyard.harness.TestHarness.SramBistConfig-ChipTop/par-rundir/ChipTop_FINAL"
+  level: "par"

@@ -13,6 +13,7 @@ $(SIM_CONF): $(sim_common_files) check-binary
 	for x in $$(cat $(MODEL_MODS_FILELIST) | sort -u) $(MODEL_SMEMS_FILE) $(SIM_FILE_REQS); do \
 		echo '    - "'$$x'"' >> $@; \
 	done
+	echo '    - "../generators/rocket-chip/src/main/resources/vsrc/plusarg_reader.v"' >> $@; \
 	echo "  input_files_meta: 'append'" >> $@
 	echo "  timescale: '1ns/10ps'" >> $@
 	echo "  options:" >> $@
@@ -24,6 +25,9 @@ $(SIM_CONF): $(sim_common_files) check-binary
 	for x in $(subst +define+,,$(SIM_PREPROC_DEFINES)); do \
 		echo '    - "'$$x'"' >> $@; \
 	done
+	echo '    - "USE_POWER_PINS"' >> $@; \
+	echo '    - "FUNCTIONAL"' >> $@; \
+	echo '    - "UNIT_DELAY=#1"' >> $@; \
 	echo "  defines_meta: 'append'" >> $@
 	echo "  compiler_cc_opts:" >> $@
 	for x in $(filter-out "",$(VCS_CXXFLAGS)); do \

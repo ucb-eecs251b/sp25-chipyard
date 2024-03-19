@@ -8,6 +8,7 @@ synthesis.genus.genus_bin: "/share/instsww/cadence/DDI221/GENUS221/bin/genus"
 # Innovus options
 vlsi.core.par_tool: "hammer.par.innovus"
 par.innovus.innovus_bin: "/share/instsww/cadence/DDI221/INNOVUS221/bin/innovus"
+par.innovus.version: "221"
 par.innovus.design_flow_effort: "standard"
 par.inputs.gds_merge: true
 # Pegasus options
@@ -15,12 +16,21 @@ vlsi.core.drc_tool: "hammer.drc.pegasus"
 drc.pegasus.pegasus_bin: "/share/instsww/cadence/PEGASUS221/bin/pegasus"
 vlsi.core.lvs_tool: "hammer.lvs.pegasus"
 lvs.pegasus.pegasus_bin: "/share/instsww/cadence/PEGASUS221/bin/pegasus"
-# VCS options
+# VCS/Verdi options
 vlsi.core.sim_tool: "hammer.sim.vcs"
-sim.vcs.version: "S-2021.09-SP1-1"
+sim.vcs.version: "P-2019.06"
+sim.vcs.vcs_bin: "/share/instsww/synopsys-new/vcs/P-2019.06/bin/vcs"
+sim.vcs.vcs_home: "/share/instsww/synopsys-new/vcs/P-2019.06/"
+sim.vcs.verdi_bin: "/share/instsww/synopsys-new/verdi/P-2019.06/bin/verdi"
+sim.vcs.verdi_home: "/share/instsww/synopsys-new/verdi/P-2019.06/"
+sim.outputs.waveforms: "/scratch/eecs251b-aae/chipyard/vlsi/output"
 # Voltus options
-vlsi.core.power_tool: "hammer.power.joules"
-power.joules.version: "211"
+vlsi.core.power_tool: "hammer.power.voltus"
+power.voltus.voltus_bin: "/share/instsww/cadence/SSV221/bin/voltus"
+power.voltus.version: "221"
+vlsi.core.power_tool_path: ["hammer-cadence-plugins/power"]
+vlsi.core.power_tool_path_meta: "append"
+power.voltus.lef_layer_map: "/scratch/eecs251b-aae/chipyard/vlsi/hammer/hammer/technology/sky130/voltus_qrc_lef.map"
 
 # Hammer will auto-generate a CPF for simple power designs; see hammer/src/hammer-vlsi/defaults.yml for more info
 vlsi.inputs.power_spec_mode: "auto"
