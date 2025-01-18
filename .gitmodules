@@ -144,4 +144,4 @@
 	url = https://github.com/ucb-bar/spike-devices.git
 [submodule "vlsi/hammer"]
 	path = vlsi/hammer
-	url = git@github.com:rohanku/hammer.git
+	url = git@github.com:cedard234/hammer.git
