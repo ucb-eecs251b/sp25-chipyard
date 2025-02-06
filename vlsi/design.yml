@@ -23,36 +23,36 @@ vlsi.inputs.placement_constraints:
   - path: ChipTop/system/tile_prci_domain/tile_reset_domain_tile/dcache/data/data_arrays_0/data_arrays_0_ext/mem_0_0
     type: hardmacro
     x: 300
-    y: 255
+    y: 355
     orientation: my90
   - path: ChipTop/system/tile_prci_domain/tile_reset_domain_tile/dcache/tag_array_0/tag_array_0_ext/mem_0_0
     type: hardmacro
     x: 470
-    y: 1150
+    y: 1250
     orientation: my90
 
     # icache
   - path: ChipTop/system/tile_prci_domain/tile_reset_domain_tile/frontend/icache/data_arrays_0_0/data_arrays_0_0_ext/mem_0_0
     type: hardmacro
     x: 2750
-    y: 255
+    y: 355
     orientation: r270
   - path: ChipTop/system/tile_prci_domain/tile_reset_domain_tile/frontend/icache/data_arrays_1_0/data_arrays_0_0_ext/mem_0_0
     type: hardmacro
     x: 2750
-    y: 850
+    y: 950
     orientation: r270
   - path: ChipTop/system/tile_prci_domain/tile_reset_domain_tile/frontend/icache/tag_array_0/tag_array_0_0_ext/mem_0_0
     type: hardmacro
     x: 3020
-    y: 1450
+    y: 1550
     orientation: r270
 
     # srambist
   - path: ChipTop/system/srambist/sram
     type: hardmacro
     x: 470
-    y: 2000
+    y: 2100
     orientation: my90
 
 # Power straps
