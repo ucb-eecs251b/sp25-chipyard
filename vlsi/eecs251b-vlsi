@@ -6,7 +6,7 @@ from hammer.vlsi import CLIDriver, HammerTool, HammerToolHookAction
 
 from typing import Dict, Callable, Optional, List
 
-from hammer.technology.sky130 import SKY130Tech, force_iquantus_hook
+from hammer.technology.sky130 import SKY130Tech
 
 def write_dyn_report_hook(x: HammerTool) -> bool:
     x.verbose_append("set_power_include_file power.inc")
@@ -32,7 +32,7 @@ class Eecs251bDriver(CLIDriver):
 
             # make_removal_hook will remove the specified step from the flow
             HammerTool.make_removal_hook("place_bumps"),
-            HammerTool.make_post_insertion_hook("route_design", force_iquantus_hook),
+            # HammerTool.make_post_insertion_hook("route_design", force_iquantus_hook),
 
             # The target step in any of the above calls may be a default step or another one of your custom hooks
         ]
