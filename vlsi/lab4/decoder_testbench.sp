@@ -1,7 +1,6 @@
 * Decoder testbench
 
-.lib '/home/ff/eecs251b/sky130/sky130_cds/sky130_release_0.0.1/models/sky130.lib.spice' tt
-.include '/home/ff/eecs251b/sky130/sky130_conv.spice'
+.lib '/home/ff/eecs251b/sky130/sky130_cds/sky130_release_0.0.4/models/sky130.lib.spice' tt
 .include '../build/lab4/pex-rundir/decoder.post.sp'
 
 vvdd vdd 0 1.8
